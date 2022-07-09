@@ -1,10 +1,9 @@
 DROP TABLE IF EXISTS prisoners;
 
 CREATE TABLE prisoners (
-id SERIAL PRIMARY KEY,
+id uuid PRIMARY KEY,
+surname text NOT NULL,
 name text NOT NULL,
-sirname text NOT NULL,
-patronimic text,
-birthday date,
-personnelNumber integer
+lastname text,
+birthday date
 );
