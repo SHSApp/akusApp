@@ -1,27 +1,46 @@
 //import logo from './logo.svg';
 import './App.css';
 import { Button } from 'react-bootstrap';
+import { Navbar, NavDropdown, Nav, Container, Row, Col } from "react-bootstrap";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Button variant="primary">
-         Button 1
-          </Button>
-          <Button variant="success" size="lg">
-            Button 2
-          </Button>
-                    <Button as="input" type="button" value="Input" size="lg" />{' '}
-      <div className="d-grid gap-2">
-      <Button variant="primary" size="lg">
-        Block level button
-      </Button>
-      <Button variant="secondary" size="lg">
-        Block level button
-      </Button>
-    </div>
-      </header>
+      <Navbar bg="light" expand="lg">
+        <Container>
+          <Navbar.Brand href="#home">Web-AKUS</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="#home">Главная</Nav.Link>
+              <NavDropdown title="Запросы" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Дисциплинарная практика</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">Условия отбывания</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Исполнительные листы</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">Осуждение</NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link href="#link">Как пользоваться</Nav.Link>
+              <Nav.Link href="#link">Об авторе</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <Container>
+        <Row>
+          <Col md={4} sm={4}>
+            <h3>ФИО осужденного</h3>
+            <Nav
+              bsStyle="pills"
+              stacked
+            >
+            </Nav>
+          </Col>
+          <Col md={8} sm={8}>
+
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
